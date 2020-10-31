@@ -1,0 +1,17 @@
+pragma solidity >= 0.5.13 < 0.7.3;
+ contract bank{
+     address public myadd;
+     uint256 public totalbal;
+     constructor() public{
+         myadd = msg.sender;
+     }
+     function receivemoney()public payable{
+         totalbal += msg.value;
+     }
+        function withdrawmoney() public{
+        require(msg.sender == myadd, "You Cannot Withdraw All money Coz you are not the owner");
+       
+        address payable to = msg.sender;
+        to.transfer(address(this).balance);
+    }
+ }
