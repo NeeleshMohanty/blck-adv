@@ -1,0 +1,51 @@
+pragma solidity >=0.5.13 < 0.7.3;
+contract sharewallet{
+    address sharewalletowner;
+    uint totalmoney;
+    uint[] emp1=[30,30,30];
+     uint[] emp2=[20,20,20];
+      uint[] emp3=[10,10,10];
+       uint[] emp4=[5,5,5];
+        uint[] emp5=[2,2,2];
+    mapping(address => uint) public addresofemployee;
+    constructor() public{
+        sharewalletowner=msg.sender;
+        
+    }
+    function receiveethers()public payable{
+         totalmoney +=msg.value;
+    }
+    
+   function withdraw()public{
+       for (uint i=0; i<3; i++){
+       require(msg.sender == emp1[i],"you are not eligible");
+       uint amount;
+       address payable to=msg.sender;
+       to.transfer(amount);
+   }
+      for (uint i=0; i<3; i++){
+       require(msg.sender == emp2[i],"you are not eligible");
+       uint amount;
+       address payable to=msg.sender;
+       to.transfer(amount);
+   }
+      for (uint i=0; i<3; i++){
+       require(msg.sender == emp3[i],"you are not eligible");
+       uint amount;
+       address payable to=msg.sender;
+       to.transfer(amount);
+   }
+      for (uint i=0; i<3; i++){
+       require(msg.sender == emp4[i],"you are not eligible");
+       uint amount;
+       address payable to=msg.sender;
+       to.transfer(amount);
+   }
+      for (uint i=0; i<3; i++){
+       require(msg.sender == emp5[i],"you are not eligible");
+       uint amount;
+       address payable to=msg.sender;
+       to.transfer(amount);
+   }
+
+}
